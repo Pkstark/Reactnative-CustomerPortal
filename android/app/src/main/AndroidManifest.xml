@@ -1,0 +1,56 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".MainApplication"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:name,android:label,android:theme,android:usesCleartextTraffic">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".HandleRedirectActivity"
+            android:exported="true">
+
+            <!-- App 1 redirect URI -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="zczohouser1723.trackmytime.portal.sdk" />
+            </intent-filter>
+
+            <!-- App 2 redirect URI -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="zczohouser1723.karthiktest.portal.sdk" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
